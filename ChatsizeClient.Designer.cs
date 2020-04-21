@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatSizeClientMain));
             this.SendTextButton = new System.Windows.Forms.Button();
             this.SendText = new System.Windows.Forms.TextBox();
-            this.RealtimeChatAdminCodeSize = new System.Windows.Forms.TextBox();
             this.AdminCodeChatSize = new System.Windows.Forms.Button();
             this.Menuchat = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +44,8 @@
             this.UpdateChatAdminCode = new System.ComponentModel.BackgroundWorker();
             this.PermissionText = new System.Windows.Forms.TextBox();
             this.ChatsizePicture = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.RealtimeChatAdminCodeSize = new System.Windows.Forms.TextBox();
             this.Menuchat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChatsizePicture)).BeginInit();
@@ -76,18 +77,6 @@
             this.SendText.TabIndex = 10;
             this.SendText.Visible = false;
             this.SendText.TextChanged += new System.EventHandler(this.SendText_TextChanged);
-            // 
-            // RealtimeChatAdminCodeSize
-            // 
-            this.RealtimeChatAdminCodeSize.BackColor = System.Drawing.Color.Black;
-            this.RealtimeChatAdminCodeSize.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F);
-            this.RealtimeChatAdminCodeSize.ForeColor = System.Drawing.Color.White;
-            this.RealtimeChatAdminCodeSize.Location = new System.Drawing.Point(341, 19);
-            this.RealtimeChatAdminCodeSize.Multiline = true;
-            this.RealtimeChatAdminCodeSize.Name = "RealtimeChatAdminCodeSize";
-            this.RealtimeChatAdminCodeSize.Size = new System.Drawing.Size(780, 552);
-            this.RealtimeChatAdminCodeSize.TabIndex = 9;
-            this.RealtimeChatAdminCodeSize.Visible = false;
             // 
             // AdminCodeChatSize
             // 
@@ -252,15 +241,31 @@
             this.ChatsizePicture.TabStop = false;
             this.ChatsizePicture.Visible = false;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // RealtimeChatAdminCodeSize
+            // 
+            this.RealtimeChatAdminCodeSize.BackColor = System.Drawing.Color.Black;
+            this.RealtimeChatAdminCodeSize.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F);
+            this.RealtimeChatAdminCodeSize.ForeColor = System.Drawing.Color.White;
+            this.RealtimeChatAdminCodeSize.Location = new System.Drawing.Point(341, 18);
+            this.RealtimeChatAdminCodeSize.Multiline = true;
+            this.RealtimeChatAdminCodeSize.Name = "RealtimeChatAdminCodeSize";
+            this.RealtimeChatAdminCodeSize.Size = new System.Drawing.Size(780, 552);
+            this.RealtimeChatAdminCodeSize.TabIndex = 15;
+            this.RealtimeChatAdminCodeSize.Visible = false;
+            // 
             // ChatSizeClientMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1126, 635);
+            this.Controls.Add(this.RealtimeChatAdminCodeSize);
             this.Controls.Add(this.SendTextButton);
             this.Controls.Add(this.SendText);
-            this.Controls.Add(this.RealtimeChatAdminCodeSize);
             this.Controls.Add(this.Menuchat);
             this.Controls.Add(this.ChatsizePicture);
             this.Controls.Add(this.PermissionText);
@@ -281,7 +286,6 @@
 
         private System.Windows.Forms.Button SendTextButton;
         private System.Windows.Forms.TextBox SendText;
-        public System.Windows.Forms.TextBox RealtimeChatAdminCodeSize;
         private System.Windows.Forms.Button AdminCodeChatSize;
         private System.Windows.Forms.Panel Menuchat;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -295,6 +299,8 @@
         private System.Windows.Forms.PictureBox ChatsizePicture;
         private System.ComponentModel.BackgroundWorker UpdateChatAdminCode;
         private System.Windows.Forms.TextBox PermissionText;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        internal System.Windows.Forms.TextBox RealtimeChatAdminCodeSize;
     }
 }
 

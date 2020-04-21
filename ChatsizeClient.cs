@@ -76,16 +76,6 @@ namespace ChatSizeClient
             }
         }
 
-        public string ChatSizeClientUpdateChatAdminCode;
-        public void UpdateRealtimechatClientSize(string RealtimeupdateClientSize)
-        {
-            ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize.ToString();
-        }
-
-        public void ReveiceChat()
-        {
-            this.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
-        }
 
         //Client SIZE
         //public static void UpdateRealtimeChat(string msg)
@@ -164,6 +154,14 @@ namespace ChatSizeClient
             USERNAME.Text = namesend;
         }
 
+        public string ChatSizeClientUpdateChatAdminCode;
+        public void UpdateRealtimechatClientSize(string RealtimeupdateClientSize)
+        {
+            ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize;
+            MessageBox.Show(" Text " + RealtimeChatAdminCodeSize.Text);
+            MessageBox.Show(" Var " + ChatSizeClientUpdateChatAdminCode);
+        }
+
         private void AdminCodeChatSize_Click(object sender, EventArgs e)
         {
             if (RealtimeChatAdminCodeSizeStatus == "close")
@@ -186,6 +184,16 @@ namespace ChatSizeClient
         {
             Thread MOCS = new Thread(MenuOpenChatSound);
             MOCS.Start();
+            Thread Test = new Thread(UpdateChat);
+            Test.Start();
+        }
+
+        public void UpdateChat()
+        {
+            while (true)
+            {
+                this.RealtimeChatAdminCodeSize.Text = this.ChatSizeClientUpdateChatAdminCode;
+            }
         }
 
         private void SendText_TextChanged(object sender, EventArgs e)
@@ -195,12 +203,22 @@ namespace ChatSizeClient
 
         private void UpdateChatAdminCode_DoWork_1(object sender, DoWorkEventArgs e)
         {
-            while (true)
-            {
-                MessageBox.Show("Work!");
-                RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
-                Console.WriteLine(ChatSizeClientUpdateChatAdminCode);
-            }
+            //while (true)
+            //{
+            //    MessageBox.Show("Work!");
+            //    RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
+            //    Console.WriteLine(ChatSizeClientUpdateChatAdminCode);
+            //}
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void RealtimeChatAdminCodeSize_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
