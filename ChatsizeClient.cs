@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ChatSizeClient;
+using ChatSizeClient2;
 
 namespace ChatSizeClient
 {
@@ -24,6 +24,7 @@ namespace ChatSizeClient
         public static MainMenu Cheackstatusserver;
         public ChatSizeClientMain()
         {
+            Client.admin = this;
             RealtimeChatAdminCodeSizeStatus = "close";
             sendtextShowStatus = "close";
             chatSizeClientMain = this;
@@ -78,7 +79,6 @@ namespace ChatSizeClient
         {
             while (true)
             {
-                MessageBox.Show("Work!");
                 string ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize.ToString();
                 ChatSizeClientMain.chatSizeClientMain.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
             }
@@ -156,9 +156,9 @@ namespace ChatSizeClient
         {
             //byte[] buffer = Encoding.ASCII.GetBytes(PermissionText + usernamesend + " : " + bytesToSend);
             Console.Beep();
-            Client.sendData(" [ " + PermissionText.Text + " ] ", USERNAME.Text + " : ", SendText.Text);
+            Client.sendData(" [ " + PermissionText.Text + " ]\r\n ", USERNAME.Text + " : ", SendText.Text);
             Console.Beep();
-            RealtimeChatAdminCodeSize.Text += SendText.Text + "\r\n";
+            RealtimeChatAdminCodeSize.Text += " [ " + PermissionText.Text + " ] "+ USERNAME.Text + " : "+ SendText.Text + "\r\n";
         }
 
         public void Receivename (string namesend)
