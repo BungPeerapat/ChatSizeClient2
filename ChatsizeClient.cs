@@ -42,17 +42,21 @@ namespace ChatSizeClient
 
         public static void MenuOpenChatSound() //เปิดเสียง ComputerData
         {
-
+            System.IO.Stream str = ChatSizeClient2.Properties.Resources.ComputerData;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Play();
         }
 
         public static void MenuOpenChatSoundLoading()//เปิดเสียง Loading_Sound
         {
-
+            System.IO.Stream str = ChatSizeClient2.Properties.Resources.Loading_Sound;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Play();
         }
 
         private void MenuOpenChat()
         {
-            while (Menuchat.Height <= 569)
+            while (Menuchat.Height <= 455)
             {
                 Menuchat.Height += 1;
                 Task.Delay(500);
@@ -189,6 +193,11 @@ namespace ChatSizeClient
         {
             Thread MOCS = new Thread(MenuOpenChatSound);
             MOCS.Start();
+        }
+
+        private void SendText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -93,5 +93,11 @@
       <Name>ChatSizeAdmin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture and Sound\ComputerData.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture and Sound\Loading Sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

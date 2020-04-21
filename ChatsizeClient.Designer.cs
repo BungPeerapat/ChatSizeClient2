@@ -75,6 +75,7 @@
             this.SendText.Size = new System.Drawing.Size(666, 53);
             this.SendText.TabIndex = 10;
             this.SendText.Visible = false;
+            this.SendText.TextChanged += new System.EventHandler(this.SendText_TextChanged);
             // 
             // RealtimeChatAdminCodeSize
             // 
@@ -116,7 +117,7 @@
             this.Menuchat.Controls.Add(this.AdminCodeChatSize);
             this.Menuchat.Location = new System.Drawing.Point(5, 6);
             this.Menuchat.Name = "Menuchat";
-            this.Menuchat.Size = new System.Drawing.Size(330, 138);
+            this.Menuchat.Size = new System.Drawing.Size(330, 69);
             this.Menuchat.TabIndex = 12;
             // 
             // pictureBox1
