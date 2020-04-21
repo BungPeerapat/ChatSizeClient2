@@ -18,6 +18,8 @@ namespace ChatSizeClient
         string RealtimeChatAdminCodeSizeStatus = null;
         public static ChatSizeClientMain chatSizeClientMain;
         public static MainMenu UpdateRealtimechat;
+        public int x = 0;
+
 
 
         string sendtextShowStatus = null;
@@ -80,37 +82,35 @@ namespace ChatSizeClient
             while (true)
             {
                 string ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize.ToString();
-                ChatSizeClientMain.chatSizeClientMain.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
+                if (chatSizeClientMain != null)
+                {
+                    break;
+                }
             }
         }
-
-        //public static void UpdateRealtimechatClientSizeShow() //เปิดด้วย
-        //{
-        //    ChatSizeClientMain.chatSizeClientMain.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode.ToString;
-        //}
 
         //Client SIZE
-        public static void UpdateRealtimeChat(string msg)
-        {
-            if (chatSizeClientMain != null)
-                chatSizeClientMain.updateRealtimeChat(msg);
-        }
+        //public static void UpdateRealtimeChat(string msg)
+        //{
+        //    if (chatSizeClientMain != null)
+        //        chatSizeClientMain.updateRealtimeChat(msg);
+        //}
 
-        private delegate void ChatDelegate(string msg);
-        private void updateRealtimeChat(string msg)
-        {
-            // If this returns true, it means it was called from an external thread.
-            if (InvokeRequired)
-            {
-                // Create a delegate of this method and let the form run it.
-                this.Invoke(new ChatDelegate(updateRealtimeChat), new object[] { msg });
-                return; // Important
-            }
+        //private delegate void ChatDelegate(string msg);
+        //private void updateRealtimeChat(string msg)
+        //{
+        //    // If this returns true, it means it was called from an external thread.
+        //    if (InvokeRequired)
+        //    {
+        //        // Create a delegate of this method and let the form run it.
+        //        this.Invoke(new ChatDelegate(updateRealtimeChat), new object[] { msg });
+        //        return; // Important
+        //    }
 
-            // Set textBox
+        //    // Set textBox
 
-            RealtimeChatAdminCodeSize.Text += msg;
-        }
+        //    RealtimeChatAdminCodeSize.Text += msg;
+        //}
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
@@ -157,8 +157,8 @@ namespace ChatSizeClient
             //byte[] buffer = Encoding.ASCII.GetBytes(PermissionText + usernamesend + " : " + bytesToSend);
             Console.Beep();
             Console.Beep();
-            RealtimeChatAdminCodeSize.Text += (" [ " + PermissionText.Text + " ] " + USERNAME.Text + " : " + SendText.Text + "\r\n");
-            Client.sendData(" [ " + PermissionText.Text + " ]\r\n ", USERNAME.Text + " : ", SendText.Text);
+            this.RealtimeChatAdminCodeSize.Text += " [ " + PermissionText.Text + " ] " + USERNAME.Text + " : " + SendText.Text + "\r\n";
+            Client.sendData(" [ " + PermissionText.Text + " ] " + "\r\n", USERNAME.Text + " : ", SendText.Text);
         }
 
         public void Receivename (string namesend)
