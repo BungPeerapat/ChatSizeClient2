@@ -77,16 +77,14 @@ namespace ChatSizeClient
         }
 
         public string ChatSizeClientUpdateChatAdminCode;
-        public static void UpdateRealtimechatClientSize(string RealtimeupdateClientSize)
+        public void UpdateRealtimechatClientSize(string RealtimeupdateClientSize)
         {
-            while (true)
-            {
-                string ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize.ToString();
-                if (chatSizeClientMain != null)
-                {
-                    break;
-                }
-            }
+            ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize.ToString();
+        }
+
+        public void ReveiceChat()
+        {
+            this.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
         }
 
         //Client SIZE
