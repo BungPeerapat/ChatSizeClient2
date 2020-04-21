@@ -45,6 +45,8 @@ namespace ChatSizeClient
                     Console.WriteLine(ex.Message);
                 }
             }
+            Console.Beep();
+            MessageBox.Show("1");
             ns = client.GetStream();
             Console.Beep();
             //*****
@@ -56,7 +58,8 @@ namespace ChatSizeClient
         public static void sendData(String PermissionText, String usernamesend, String bytesToSend)
         {
             byte[] buffer = Encoding.ASCII.GetBytes(PermissionText + usernamesend + " : " + bytesToSend);
-            ns.Write(buffer, 0, buffer.Length); //Fix bug!
+            NetworkStream stream = client.GetStream();
+            stream.Write(buffer, 0, buffer.Length); //Fix bug!
         }
 
         public static void ReceiveData(TcpClient client)

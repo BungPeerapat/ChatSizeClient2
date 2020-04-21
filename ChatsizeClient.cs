@@ -156,9 +156,9 @@ namespace ChatSizeClient
         {
             //byte[] buffer = Encoding.ASCII.GetBytes(PermissionText + usernamesend + " : " + bytesToSend);
             Console.Beep();
-            Client.sendData(" [ " + PermissionText.Text + " ]\r\n ", USERNAME.Text + " : ", SendText.Text);
             Console.Beep();
-            RealtimeChatAdminCodeSize.Text += " [ " + PermissionText.Text + " ] "+ USERNAME.Text + " : "+ SendText.Text + "\r\n";
+            RealtimeChatAdminCodeSize.Text += (" [ " + PermissionText.Text + " ] " + USERNAME.Text + " : " + SendText.Text + "\r\n");
+            Client.sendData(" [ " + PermissionText.Text + " ]\r\n ", USERNAME.Text + " : ", SendText.Text);
         }
 
         public void Receivename (string namesend)
