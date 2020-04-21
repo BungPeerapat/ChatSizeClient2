@@ -45,7 +45,8 @@
             this.PermissionText = new System.Windows.Forms.TextBox();
             this.ChatsizePicture = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.RealtimeChatAdminCodeSize = new System.Windows.Forms.TextBox();
+            this.RealtimeChatadminuser = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.Menuchat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChatsizePicture)).BeginInit();
@@ -245,17 +246,27 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // RealtimeChatAdminCodeSize
+            // RealtimeChatadminuser
             // 
-            this.RealtimeChatAdminCodeSize.BackColor = System.Drawing.Color.Black;
-            this.RealtimeChatAdminCodeSize.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F);
-            this.RealtimeChatAdminCodeSize.ForeColor = System.Drawing.Color.White;
-            this.RealtimeChatAdminCodeSize.Location = new System.Drawing.Point(341, 18);
-            this.RealtimeChatAdminCodeSize.Multiline = true;
-            this.RealtimeChatAdminCodeSize.Name = "RealtimeChatAdminCodeSize";
-            this.RealtimeChatAdminCodeSize.Size = new System.Drawing.Size(780, 552);
-            this.RealtimeChatAdminCodeSize.TabIndex = 15;
-            this.RealtimeChatAdminCodeSize.Visible = false;
+            this.RealtimeChatadminuser.BackColor = System.Drawing.SystemColors.Desktop;
+            this.RealtimeChatadminuser.Font = new System.Drawing.Font("Franklin Gothic Medium", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealtimeChatadminuser.ForeColor = System.Drawing.SystemColors.Info;
+            this.RealtimeChatadminuser.Location = new System.Drawing.Point(343, 17);
+            this.RealtimeChatadminuser.Multiline = true;
+            this.RealtimeChatadminuser.Name = "RealtimeChatadminuser";
+            this.RealtimeChatadminuser.Size = new System.Drawing.Size(778, 554);
+            this.RealtimeChatadminuser.TabIndex = 15;
+            this.RealtimeChatadminuser.Text = "Haha";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(934, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 123);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ChatSizeClientMain
             // 
@@ -263,7 +274,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1126, 635);
-            this.Controls.Add(this.RealtimeChatAdminCodeSize);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RealtimeChatadminuser);
             this.Controls.Add(this.SendTextButton);
             this.Controls.Add(this.SendText);
             this.Controls.Add(this.Menuchat);
@@ -300,7 +312,8 @@
         private System.ComponentModel.BackgroundWorker UpdateChatAdminCode;
         private System.Windows.Forms.TextBox PermissionText;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        internal System.Windows.Forms.TextBox RealtimeChatAdminCodeSize;
+        public System.Windows.Forms.TextBox RealtimeChatadminuser;
+        private System.Windows.Forms.Button button1;
     }
 }
 

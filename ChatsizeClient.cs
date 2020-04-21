@@ -19,6 +19,7 @@ namespace ChatSizeClient
         public static ChatSizeClientMain chatSizeClientMain;
         public static MainMenu UpdateRealtimechat;
         public int x = 0;
+        public string ChatSizeClientUpdateChatAdminCode;
 
 
 
@@ -145,7 +146,7 @@ namespace ChatSizeClient
             //byte[] buffer = Encoding.ASCII.GetBytes(PermissionText + usernamesend + " : " + bytesToSend);
             Console.Beep();
             Console.Beep();
-            this.RealtimeChatAdminCodeSize.Text += " [ " + PermissionText.Text + " ] " + USERNAME.Text + " : " + SendText.Text + "\r\n";
+            this.RealtimeChatadminuser.Text += " [ " + PermissionText.Text + " ] " + USERNAME.Text + " : " + SendText.Text + "\r\n";
             Client.sendData(" [ " + PermissionText.Text + " ] " + "\r\n", USERNAME.Text + " : ", SendText.Text);
         }
 
@@ -154,26 +155,36 @@ namespace ChatSizeClient
             USERNAME.Text = namesend;
         }
 
-        public string ChatSizeClientUpdateChatAdminCode;
         public void UpdateRealtimechatClientSize(string RealtimeupdateClientSize)
         {
-            ChatSizeClientUpdateChatAdminCode = RealtimeupdateClientSize;
-            MessageBox.Show(" Text " + RealtimeChatAdminCodeSize.Text);
-            MessageBox.Show(" Var " + ChatSizeClientUpdateChatAdminCode);
+            //            Permission.Text = CodeSend.ToString();
+            RealtimeChatadminuser.Text = RealtimeupdateClientSize.ToString();
+            //MessageBox.Show(" Var " + ChatSizeClientUpdateChatAdminCode);
+            //Thread Test123 = new Thread(UpdateChat);
+            //Test123.Start();
         }
+        //public void UpdateChat()
+        //{
+        //    while (true)
+        //    {
+        //        this.RealtimeChatadminuser.Text = ChatSizeClientUpdateChatAdminCode;
+        //        MessageBox.Show(" Text " + RealtimeChatadminuser.Text);
+        //    }
+        //    Console.Beep();
+        //}
 
         private void AdminCodeChatSize_Click(object sender, EventArgs e)
         {
             if (RealtimeChatAdminCodeSizeStatus == "close")
             {
-                RealtimeChatAdminCodeSize.Visible = true;
+                RealtimeChatadminuser.Visible = true;
                 RealtimeChatAdminCodeSizeStatus = "open";
                 Thread BeepSound = new Thread(beepSound);
                 SendTextButton.Visible = true;
             }
             else
             {
-                RealtimeChatAdminCodeSize.Visible = false;
+                RealtimeChatadminuser.Visible = false;
                 RealtimeChatAdminCodeSizeStatus = "close";
                 Thread BeepSound = new Thread(beepSound);
                 SendTextButton.Visible = true;
@@ -184,16 +195,6 @@ namespace ChatSizeClient
         {
             Thread MOCS = new Thread(MenuOpenChatSound);
             MOCS.Start();
-            Thread Test = new Thread(UpdateChat);
-            Test.Start();
-        }
-
-        public void UpdateChat()
-        {
-            while (true)
-            {
-                this.RealtimeChatAdminCodeSize.Text = this.ChatSizeClientUpdateChatAdminCode;
-            }
         }
 
         private void SendText_TextChanged(object sender, EventArgs e)
@@ -219,6 +220,13 @@ namespace ChatSizeClient
         private void RealtimeChatAdminCodeSize_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        async private void button1_Click(object sender, EventArgs e)
+        {
+            RealtimeChatadminuser.Text = "Loading...";
+            await Task.Delay(2000);
+            RealtimeChatadminuser.Text = ChatSizeClientUpdateChatAdminCode;
         }
     }
 }
