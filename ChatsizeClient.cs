@@ -89,16 +89,6 @@ namespace ChatSizeClient
         //    ChatSizeClientMain.chatSizeClientMain.RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode.ToString;
         //}
 
-        private void UpdateChatAdminCode_DoWork(object sender, DoWorkEventArgs e)
-        {
-            while (true)
-            {
-                MessageBox.Show("Work!");
-                RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
-                Console.WriteLine(ChatSizeClientUpdateChatAdminCode);
-            }
-        }
-
         //Client SIZE
         public static void UpdateRealtimeChat(string msg)
         {
@@ -171,6 +161,11 @@ namespace ChatSizeClient
             RealtimeChatAdminCodeSize.Text += SendText.Text + "\r\n";
         }
 
+        public void Receivename (string namesend)
+        {
+            USERNAME.Text = namesend;
+        }
+
         private void AdminCodeChatSize_Click(object sender, EventArgs e)
         {
             if (RealtimeChatAdminCodeSizeStatus == "close")
@@ -198,6 +193,16 @@ namespace ChatSizeClient
         private void SendText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void UpdateChatAdminCode_DoWork_1(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                MessageBox.Show("Work!");
+                RealtimeChatAdminCodeSize.Text = ChatSizeClientUpdateChatAdminCode;
+                Console.WriteLine(ChatSizeClientUpdateChatAdminCode);
+            }
         }
     }
 }

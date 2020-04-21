@@ -223,6 +223,10 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Visible = false;
             // 
+            // UpdateChatAdminCode
+            // 
+            this.UpdateChatAdminCode.DoWork += new System.ComponentModel.DoWorkEventHandler(this.UpdateChatAdminCode_DoWork_1);
+            // 
             // PermissionText
             // 
             this.PermissionText.BackColor = System.Drawing.SystemColors.InfoText;
