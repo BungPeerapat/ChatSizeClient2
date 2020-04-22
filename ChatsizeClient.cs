@@ -19,7 +19,7 @@ namespace ChatSizeClient
         public static ChatSizeClientMain chatSizeClientMain;
         public static MainMenu UpdateRealtimechat;
         public int x = 0;
-        public string ChatSizeClientUpdateChatAdminCode;
+        public string RealtimeupdateClientSize;
 
 
 
@@ -159,7 +159,8 @@ namespace ChatSizeClient
         {
             //            Permission.Text = CodeSend.ToString();
             RealtimeChatadminuser.Text = RealtimeupdateClientSize.ToString();
-            //MessageBox.Show(" Var " + ChatSizeClientUpdateChatAdminCode);
+            //MessageBox.Show(" Var " + RealtimeupdateClientSize);
+            //MessageBox.Show(" Textinput " + RealtimeChatadminuser.Text);
             //Thread Test123 = new Thread(UpdateChat);
             //Test123.Start();
         }
@@ -222,11 +223,22 @@ namespace ChatSizeClient
 
         }
 
-        async private void button1_Click(object sender, EventArgs e)
+        public string RECHATnow;
+
+        public void REChat(string RealtimeupdateClientSize)
+        {
+            RECHATnow = RealtimeupdateClientSize;
+            MessageBox.Show(RECHATnow + "1");
+            RealtimeChatadminuser.Text = RECHATnow;
+        }
+
+        async public void button1_Click(object sender, EventArgs e)
         {
             RealtimeChatadminuser.Text = "Loading...";
             await Task.Delay(2000);
-            RealtimeChatadminuser.Text = ChatSizeClientUpdateChatAdminCode;
+            MessageBox.Show(RECHATnow + "2");
+            RealtimeChatadminuser.Text = RECHATnow;
+
         }
     }
 }

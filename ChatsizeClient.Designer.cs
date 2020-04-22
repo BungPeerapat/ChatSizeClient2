@@ -256,7 +256,7 @@
             this.RealtimeChatadminuser.Name = "RealtimeChatadminuser";
             this.RealtimeChatadminuser.Size = new System.Drawing.Size(778, 554);
             this.RealtimeChatadminuser.TabIndex = 15;
-            this.RealtimeChatadminuser.Text = "Haha";
+            this.RealtimeChatadminuser.Visible = false;
             // 
             // button1
             // 
@@ -312,8 +312,8 @@
         private System.ComponentModel.BackgroundWorker UpdateChatAdminCode;
         private System.Windows.Forms.TextBox PermissionText;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        public System.Windows.Forms.TextBox RealtimeChatadminuser;
         private System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.TextBox RealtimeChatadminuser;
     }
 }
 
